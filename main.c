@@ -4,6 +4,7 @@
 #include "parser.h"
 #include "utils.h"
 #include "ad.h"
+#include "at.h"
 
 int main()
 {
@@ -20,12 +21,21 @@ int main()
     parse(parserTokens);
     free(parserBuffer);*/
     //analizator de domeniu
+    /*
     char *adBuffer=loadFile("tests/testad.c");
     Token *adTokens=tokenize(adBuffer);
     pushDomain();
     parse(adTokens);
     showDomain(symTable, "global");
     dropDomain();
-    free(adBuffer);
+    free(adBuffer);*/
+    //analizator de tipuri
+    char *atBuffer=loadFile("tests/testat.c");
+    Token *atTokens=tokenize(atBuffer);
+    pushDomain();
+    parse(atTokens);
+    showDomain(symTable, "global");
+    dropDomain();
+    free(atBuffer);
     return 0;
 }

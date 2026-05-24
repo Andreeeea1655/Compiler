@@ -633,7 +633,7 @@ bool exprCast(Ret *r){
 					return true;
 				}else tkerr("syntax error: expected expression after cast");
 			}else tkerr("syntax error: expected ')'");
-		}else tkerr("syntax error: expected type in cast");
+		}
 	}
 	iTk=start;
 	if(exprUnary(r)){
@@ -767,7 +767,7 @@ bool exprPrimary(Ret *r){
 			if(consume(RPAR)){
 				return true;
 			}else tkerr("syntax error: expected ')'");
-		}else tkerr("syntax error: expected expression after '('");
+		}
 	}
 	return false;
 }

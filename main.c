@@ -33,8 +33,11 @@ int main()
     char *atBuffer=loadFile("tests/testat.c");
     Token *atTokens=tokenize(atBuffer);
     pushDomain();
+    vmInit();
     parse(atTokens);
-    showDomain(symTable, "global");
+    //showDomain(symTable, "global");
+    Instr *testCode=genTestProgramDouble();
+    run(testCode);
     dropDomain();
     free(atBuffer);
     return 0;

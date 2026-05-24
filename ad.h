@@ -1,8 +1,7 @@
 #pragma once
 
-//#include "vm.h"
-struct Instr; typedef struct Instr Instr;
-
+#include "vm.h"
+//struct Instr; typedef struct Instr Instr;
 // the domain analysis
 
 struct Symbol;typedef struct Symbol Symbol;
